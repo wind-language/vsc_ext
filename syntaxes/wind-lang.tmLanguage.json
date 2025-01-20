@@ -1,0 +1,111 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Wind",
+	"patterns": [
+		{
+			"name": "comment.line.double-slash.wind",
+			"match": "//.*$"
+		},
+		{
+			"name": "comment.block.wind",
+			"begin": "/\\*",
+			"end": "\\*/"
+		},
+		{
+			"name": "keyword.control.directive.wind",
+			"match": "@(include|import|pure|extern|pub|type|linkflag)"
+		},
+		{
+			"name": "keyword.control.wind",
+			"match": "\\b(branch|loop|continue|break|try|finally|else|func|return|global|var)\\b"
+		},
+		{
+			"name": "keyword.type.wind",
+			"match": "\\b(byte|short|int|long|unsigned byte|s8|s16|s32|s64|u8|u16|u32|u64|bool|char)\\b"
+		},
+		{
+			"name": "constant.language.wind",
+			"match": "\\b(true|false|Null)\\b"
+		},
+		{
+			"name": "keyword.operator.wind",
+			"match": "::|\\b(sizeof<[^>]+>)\\b"
+		},
+		{
+			"name": "keyword.operator.arithmetic.wind",
+			"match": "\\+|\\-|\\*|\\/|\\%|\\+=|\\-=|\\*=|\\/=|\\%="
+		},
+		{
+			"name": "keyword.operator.assignment.wind",
+			"match": "="
+		},
+		{
+			"name": "keyword.operator.comparison.wind",
+			"match": "==|!=|<|>|<=|>="
+		},
+		{
+			"name": "keyword.operator.logical.wind",
+			"match": "\\&\\&|\\|\\||!"
+		},
+		{
+			"name": "keyword.operator.bitwise.wind",
+			"match": "\\&|\\||\\^|~|<<|>>"
+		},
+		{
+			"name": "keyword.other.exception.wind",
+			"match": "\\b(SUM_OF|SUB_OF|MUL_OF|DIV_OF|GUARD|BOUNDS)\\b"
+		},
+		{
+			"name": "storage.type.function.wind",
+			"match": "\\bfunc\\b"
+		},
+		{
+			"name": "storage.type.variable.wind",
+			"match": "\\bvar\\b"
+		},
+		{
+			"name": "storage.type.global.wind",
+			"match": "\\bglobal\\b"
+		},
+		{
+			"name": "string.quoted.double.wind",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+			{
+				"name": "constant.character.escape.wind",
+				"match": "\\\\."
+			}
+			]
+		},
+		{
+			"name": "entity.name.function.wind",
+			"match": "\\bfunc\\s+([a-zA-Z_][a-zA-Z0-9_]*)"
+		},
+		{
+			"name": "entity.name.variable.wind",
+			"match": "\\bvar\\s+([a-zA-Z_][a-zA-Z0-9_]*)"
+		},
+		{
+			"name": "support.function.builtin.wind",
+			"match": "\\b(malloc|puts|printf|guard!)\\b"
+		},
+		{
+			"name": "constant.numeric.wind",
+			"match": "\\b[0-9]+(_[0-9]+)*\\b"
+		},
+		{
+			"name": "meta.inline.assembly.wind",
+			"begin": "\\basm\\s*\\{",
+			"end": "\\}",
+			"patterns": [
+			{
+				"name": "keyword.other.asm.wind",
+				"match": "\\b(mov|add|sub|mul|div|jmp|cmp|call|ret|push|pop)\\b"
+			}
+			]
+		}
+	],
+  	"repository": {},
+	"scopeName": "source.wind"
+}
