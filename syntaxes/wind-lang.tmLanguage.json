@@ -16,6 +16,14 @@
 			"match": "@(include|import|pure|extern|pub|type|linkflag)"
 		},
 		{
+			"name": "keyword.other.namespace.wind",
+			"match": "::"
+		},
+		{
+			"name": "keyword.pure.flags.wind",
+			"match": "(stack|abi|noabi|expr|logue|stchk)"
+		},
+		{
 			"name": "keyword.control.wind",
 			"match": "\\b(branch|loop|continue|break|try|finally|else|func|return|global|var)\\b"
 		},
@@ -29,7 +37,7 @@
 		},
 		{
 			"name": "keyword.operator.wind",
-			"match": "::|\\b(sizeof<[^>]+>)\\b"
+			"match": "\\b(sizeof<[^>]+>)\\b"
 		},
 		{
 			"name": "keyword.operator.arithmetic.wind",
@@ -51,6 +59,7 @@
 			"name": "keyword.operator.bitwise.wind",
 			"match": "\\&|\\||\\^|~|<<|>>"
 		},
+		
 		{
 			"name": "keyword.other.exception.wind",
 			"match": "\\b(SUM_OF|SUB_OF|MUL_OF|DIV_OF|GUARD|BOUNDS)\\b"
@@ -61,7 +70,7 @@
 		},
 		{
 			"name": "storage.type.variable.wind",
-			"match": "\\bvar\\b"
+			"match": "\\b(var|global)\\b"
 		},
 		{
 			"name": "storage.type.global.wind",
@@ -79,20 +88,36 @@
 			]
 		},
 		{
-			"name": "entity.name.function.wind",
+			"name": "keyword.control.namespace.wind",
+			"match": "\\b(namespace)\\b"
+		},
+		{
+			"name": "entity.name.function.declaration.wind",
 			"match": "\\bfunc\\s+([a-zA-Z_][a-zA-Z0-9_]*)"
 		},
 		{
-			"name": "entity.name.variable.wind",
+			"name": "entity.name.function.call.wind",
+			"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\s*(?=\\()"
+		},
+		{
+			"name": "entity.name.variable.declaration.wind",
 			"match": "\\bvar\\s+([a-zA-Z_][a-zA-Z0-9_]*)"
 		},
 		{
+			"name": "variable.other.reference.wind",
+			"match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+		},
+		{
 			"name": "support.function.builtin.wind",
-			"match": "\\b(malloc|puts|printf|guard!)\\b"
+			"match": "\\b(guard)\\b"
 		},
 		{
 			"name": "constant.numeric.wind",
 			"match": "\\b[0-9]+(_[0-9]+)*\\b"
+		},
+		{
+			"name": "keyword.other.cast.wind",
+			"match": "\\b(as)\\b"
 		},
 		{
 			"name": "meta.inline.assembly.wind",
